@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:photo_view/photo_view.dart';
 import 'screens/game.dart';
 import 'screens/profile.dart';
 import 'screens/credits.dart';
@@ -26,8 +27,6 @@ class MyApp extends StatelessWidget {
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  BuildContext? get context => null;
 
   void _onLocationTap() {
     print('Localização clicada');
@@ -70,10 +69,13 @@ class HomeScreen extends StatelessWidget {
                   GestureDetector(
                     onTap: _onLocationTap,
                     child: Row(
-                      children: [
-                        const Icon(Icons.location_pin, color: Colors.red),
-                        const SizedBox(width: 8),
-                        const Text('Belo Horizonte, Brasil', style: TextStyle(fontSize: 16)),
+                      children: const [
+                        Icon(Icons.location_pin, color: Colors.red),
+                        SizedBox(width: 8),
+                        Text(
+                          'Belo Horizonte, Brasil',
+                          style: TextStyle(fontSize: 16),
+                        ),
                       ],
                     ),
                   ),
@@ -88,9 +90,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Align(
+            const Align(
               alignment: Alignment.center,
-              child: const Text(
+              child: Text(
                 'Zoolingo',
                 style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
               ),
@@ -100,34 +102,45 @@ class HomeScreen extends StatelessWidget {
               child: Center(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child:
-                    Image.asset(
-                      'lib/assets/images/logozoobauru.png',
-                      width: 350,
-                      height: 350,
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image.asset(
+                    'lib/assets/images/logozoo.jpg',
+                    width: 350,
+                    height: 350,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
             ElevatedButton(
-              onPressed:() => _onViewMap(context),
+              onPressed: () => _onViewMap(context),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
-                padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
-              child: const Text('Ver mapa', style: TextStyle(color: Colors.white, fontSize: 16)),
+              child: const Text(
+                'Ver mapa',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
             ),
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () => _onDiscover(context),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
-                padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
-              child: const Text('Descubra', style: TextStyle(color: Colors.white, fontSize: 16)),
+              child: const Text(
+                'Descubra',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
             ),
             const SizedBox(height: 40),
           ],
@@ -175,19 +188,19 @@ class FullScreenMapScreen extends StatelessWidget {
         title: const Text('Mapa do Zoológico'),
         backgroundColor: Colors.green,
       ),
-      body: SizedBox.expand(
-        child: InteractiveViewer(
-          panEnabled: true,
-          boundaryMargin: const EdgeInsets.all(20),
-          minScale: 1,
-          maxScale: 4,
-          child: Image.asset(
-            'lib/assets/images/mapa.jpg',
-            fit: BoxFit.contain,
+      backgroundColor: Colors.white, // garante fundo branco do Scaffold
+      body: Container(
+        color: Colors.white, // garante fundo branco atrás do PhotoView
+        child: PhotoView(
+          imageProvider: const AssetImage('lib/assets/images/mapa.jpeg'),
+          initialScale: PhotoViewComputedScale.contained,
+          minScale: PhotoViewComputedScale.contained,
+          maxScale: PhotoViewComputedScale.covered * 3,
+          backgroundDecoration: const BoxDecoration(
+            color: Colors.white, // 👈 fundo do PhotoView branco
           ),
         ),
       ),
     );
   }
 }
-
