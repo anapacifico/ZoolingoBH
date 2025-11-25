@@ -4,11 +4,13 @@ class CreditsScreen extends StatelessWidget {
   const CreditsScreen({super.key});
 
   final List<String> integrantes = const [
-    'Luan Padilha Miranda',
-    'Kaua Limao Nunes',
-    'Bryan Joab Messias de Souza',
-    'Felipe Gabriel Tagliabues',
+    'Ana Luísa Pacífico Ramos Cruz',
     'Eduardo Marques Correa',
+    'Maria Paula0 Pereira Sousa',
+    'Mateus Mendes Mattos',
+    'Matheus Greco Morais Dallalba',
+    'Rodrigo Leandro Mendes Duarte',
+    'Sérgio Pinton Pavanelli',
   ];
 
   @override
@@ -33,12 +35,12 @@ class CreditsScreen extends StatelessWidget {
               children: [
                 _sectionTitle('Disciplina'),
                 const Text(
-                  'Desenvolvimento de Software',
+                  'Usabilidade, Desenvolvimento Web, Mobile e Jogos',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
-                    fontFamily: 'Roboto',
+                    fontFamily: 'Poppins',
                     letterSpacing: 0.3,
                   ),
                   textAlign: TextAlign.center,
@@ -47,19 +49,19 @@ class CreditsScreen extends StatelessWidget {
 
                 _sectionTitle('Professor Responsável'),
                 const Text(
-                  'Prof. Dr. Elvio Gilberto da Silva',
+                  'Prof. Alexandre Montanha',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400,
                     color: Colors.black87,
-                    fontFamily: 'Roboto',
+                    fontFamily: 'Poppins',
                     letterSpacing: 0.2,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 36),
 
-                _sectionTitle('Integrantes e Colaboradores do Grupo'),
+                _sectionTitle('Desenvolvedores'),
                 Card(
                   elevation: 8,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -76,10 +78,10 @@ class CreditsScreen extends StatelessWidget {
                           child: Text(
                             nome,
                             style: const TextStyle(
-                              fontSize: 18,
+                              fontSize: 14,
                               color: Colors.black87,
                               fontWeight: FontWeight.w500,
-                              fontFamily: 'Roboto',
+                              fontFamily: 'Poppins',
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -97,16 +99,10 @@ class CreditsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      _logoSection(
-                        title: 'Desenvolvimento:',
-                        imageAsset: 'lib/assets/images/Ciencia_da_Computacao.jpg',
-                        width: 380,
-                        height: 180,
-                      ),
                       const SizedBox(height: 24),
                       _logoSection(
                         title: 'Apoio:',
-                        imageAsset: 'lib/assets/images/coordenadoria-de-extensao.jpg',
+                        imageAsset: 'lib/assets/images/unibh.jpg',
                         width: 380,
                         height: 180,
                       ),
@@ -130,7 +126,7 @@ class CreditsScreen extends StatelessWidget {
           fontSize: 26,
           fontWeight: FontWeight.bold,
           color: Colors.green.shade900,
-          fontFamily: 'Roboto',
+          fontFamily: 'Poppins',
           letterSpacing: 1.3,
           shadows: const [
             Shadow(
@@ -158,9 +154,9 @@ class CreditsScreen extends StatelessWidget {
           title,
           style: const TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: 18,
+            fontSize: 14,
             color: Colors.black87,
-            fontFamily: 'Roboto',
+            fontFamily: 'Poppins',
           ),
           textAlign: TextAlign.center,
         ),
