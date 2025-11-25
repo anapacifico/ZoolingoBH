@@ -41,8 +41,16 @@ shared_preferences	^2.2.2	Armazenamento simples de configurações
 flutter_launcher_icons	^0.14.3	Automação de ícones personalizados
 flutter_lints	^5.0.0	Regras e boas práticas de código
 🛠️ Como Executar o Projeto
+
 # Clone o repositório
 git clone <seu-repositorio>
+
+# Instale as dependências
+flutter pub get
+
+# Execute o app
+flutter run
+
 
 # Instale as dependências
 flutter pub get
@@ -58,3 +66,4 @@ lib/
  ├── pages/
  ├── services/
  └── utils/
+
