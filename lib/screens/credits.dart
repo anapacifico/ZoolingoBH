@@ -5,12 +5,13 @@ class CreditsScreen extends StatelessWidget {
 
   final List<String> integrantes = const [
     'Ana Luísa Pacífico Ramos Cruz',
-    'Eduardo Marques Correa',
-    'Maria Paula0 Pereira Sousa',
+    'Maria Paula  Pereira Sousa',
     'Mateus Mendes Mattos',
     'Matheus Greco Morais Dallalba',
     'Rodrigo Leandro Mendes Duarte',
-    'Sérgio Pinton Pavanelli',
+    'Sérgio Pinton Pavanelli'
+    'Vitor Henrique Costa',
+    'Vitoria Rabelo Leite',
   ];
 
   @override
